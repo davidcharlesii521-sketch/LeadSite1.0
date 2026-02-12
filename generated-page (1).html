@@ -1,0 +1,641 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadSite Studio — Premium Web Design Agency</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .font-serif { font-family: 'DM Serif Display', serif; }
+        html { scroll-behavior: smooth; }
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .gradient-accent { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); }
+        .gradient-text { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .card-hover { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+        .cta-hover { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+        .cta-hover:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(99, 102, 241, 0.4); }
+        .cta-secondary:hover { background: rgba(99, 102, 241, 0.06); }
+        .step-line { position: relative; }
+        .step-line::after { content: ''; position: absolute; top: 24px; left: calc(100% + 8px); width: calc(100% - 48px); height: 1px; background: linear-gradient(90deg, #d1d5db, transparent); }
+        @media (max-width: 768px) { .step-line::after { display: none; } }
+        .browser-mockup { border-radius: 12px; overflow: hidden; box-shadow: 0 25px 80px rgba(0,0,0,0.12); }
+        .browser-dots span { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .check-highlight { background: rgba(99, 102, 241, 0.08); }
+        .marquee-track { animation: marquee 30s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .testimonial-card { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .testimonial-card:hover { transform: scale(1.02); }
+        .gallery-img { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .gallery-img:hover { transform: scale(1.03); }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-white bg-opacity-80 border-b border-gray-100" style="border-bottom-color: rgb(229, 231, 235);">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="#" class="text-xl font-semibold tracking-tighter text-gray-900">LeadSite<span class="gradient-text">.</span></a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#services" class="text-sm text-gray-500 hover:text-gray-900 transition-colors font-medium">Services</a>
+                    <a href="#work" class="text-sm text-gray-500 hover:text-gray-900 transition-colors font-medium">Work</a>
+                    <a href="#process" class="text-sm text-gray-500 hover:text-gray-900 transition-colors font-medium">Process</a>
+                    <a href="#contact" class="text-sm text-gray-500 hover:text-gray-900 transition-colors font-medium">Contact</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="https://calendly.com/davidcharlesii/free-quote" class="hidden sm:inline-flex gradient-accent cta-hover text-sm font-medium text-white rounded-lg pt-2.5 pr-5 pb-2.5 pl-5">Start Your Project</a>
+                    <button id="mobile-toggle" class="md:hidden p-2 text-gray-600">
+                        <iconify-icon icon="solar:hamburger-menu-linear" width="24" style="stroke-width:1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4">
+            <a href="#services" class="block py-3 text-sm text-gray-600 font-medium">Services</a>
+            <a href="#work" class="block py-3 text-sm text-gray-600 font-medium">Work</a>
+            <a href="#process" class="block py-3 text-sm text-gray-600 font-medium">Process</a>
+            <a href="#contact" class="block py-3 text-sm text-gray-600 font-medium">Contact</a>
+            <a href="#contact" class="block mt-3 gradient-accent text-white text-sm font-medium px-5 py-2.5 rounded-lg text-center">Start Your Project</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="lg:pt-44 lg:pb-32 lg:px-8 pt-32 pr-6 pb-20 pl-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+                <div class="fade-in">
+                    <div class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 text-xs font-semibold px-3 py-1.5 rounded-full mb-6 tracking-wide uppercase">
+                        <span class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span>
+                        Now Accepting Q1 Projects
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight text-gray-900 mb-6">
+                        Websites that turn visitors into <span class="gradient-text italic">customers</span>
+                    </h1>
+                    <p class="text-lg text-gray-500 leading-relaxed mb-10 max-w-lg font-light">
+                        We design and build conversion-focused websites for ambitious brands. No templates. No bloat. Just strategic design that drives measurable growth.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://calendly.com/davidcharlesii/free-quote" class="gradient-accent cta-hover inline-flex items-center justify-center gap-2 text-sm font-medium text-white rounded-lg pt-3.5 pr-7 pb-3.5 pl-7">
+                            Start Your Project
+                            <iconify-icon icon="solar:arrow-right-linear" width="16" class=""></iconify-icon>
+                        </a>
+                        <a href="#work" class="border border-gray-200 text-gray-700 text-sm font-medium px-7 py-3.5 rounded-lg cta-secondary inline-flex items-center justify-center gap-2 transition-colors">
+                            View Our Work
+                        </a>
+                    </div>
+                </div>
+                <div class="fade-in relative">
+                    <div class="browser-mockup bg-white border border-gray-200 relative">
+                        <div class="bg-gray-50 border-b border-gray-200 px-4 py-3 flex items-center gap-3">
+                            <div class="browser-dots flex gap-1.5">
+                                <span style="background:#ff5f57"></span>
+                                <span style="background:#febc2e"></span>
+                                <span style="background:#28c840"></span>
+                            </div>
+                            <div class="flex-1 mx-4">
+                                <div class="bg-white border border-gray-200 rounded-md px-3 py-1 text-xs text-gray-400 max-w-xs">leadsite.studio</div>
+                            </div>
+                        </div>
+                        <div class="p-1">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&amp;h=500&amp;fit=crop&amp;q=80" alt="Website Design Preview" class="w-full h-auto rounded-b-lg" style="aspect-ratio: 16 / 10; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white border border-gray-100 rounded-xl shadow-lg px-5 py-4 hidden lg:flex items-center gap-3">
+                        <div class="w-10 h-10 gradient-accent rounded-lg flex items-center justify-center">
+                            <iconify-icon icon="solar:chart-2-linear" width="20" style="color:white; stroke-width:1.5"></iconify-icon>
+                        </div>
+                        <div class="">
+                            <div class="text-xs text-gray-400 font-medium">Conversion Rate</div>
+                            <div class="text-lg font-semibold tracking-tight text-gray-900">+247%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <section class="border-y border-gray-100 bg-gray-50 py-10 px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <div class="text-center fade-in">
+                    <div class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900">150+</div>
+                    <div class="text-sm text-gray-400 mt-1 font-medium">Websites Launched</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900">94%</div>
+                    <div class="text-sm text-gray-400 mt-1 font-medium">Client Satisfaction</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="lg:text-4xl text-3xl font-semibold text-gray-900 tracking-tight">3x</div>
+                    <div class="text-sm text-gray-400 mt-1 font-medium">Avg. Conversion Lift</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900">48hr</div>
+                    <div class="text-sm text-gray-400 mt-1 font-medium">First Draft Turnaround</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section id="services" class="py-24 lg:py-32 px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-2xl mb-16 fade-in">
+                <div class="text-xs font-semibold text-indigo-500 uppercase tracking-widest mb-4">Why LeadSite</div>
+                <h2 class="font-serif text-3xl lg:text-4xl tracking-tight text-gray-900 mb-5">Design with intention,<br>built for results</h2>
+                <p class="text-gray-500 leading-relaxed font-light">Every pixel serves a purpose. We combine strategic thinking with meticulous craft to create websites that don't just look beautiful — they perform.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-white border border-gray-100 rounded-2xl p-7 fade-in">
+                    <div class="w-11 h-11 bg-indigo-50 rounded-xl flex items-center justify-center mb-5">
+                        <iconify-icon icon="solar:bolt-linear" width="22" style="color:#6366f1; stroke-width:1.5"></iconify-icon>
+                    </div>
+                    <h3 class="text-base font-semibold text-gray-900 mb-2 tracking-tight">Lightning Fast Delivery</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">From concept to launch in 1-2 weeks. No months of waiting — just rapid, quality execution.</p>
+                </div>
+                <div class="card-hover bg-white border border-gray-100 rounded-2xl p-7 fade-in">
+                    <div class="w-11 h-11 bg-indigo-50 rounded-xl flex items-center justify-center mb-5">
+                        <iconify-icon icon="solar:target-linear" width="22" style="color:#6366f1; stroke-width:1.5"></iconify-icon>
+                    </div>
+                    <h3 class="text-base font-semibold text-gray-900 mb-2 tracking-tight">Conversion Optimized</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Every layout decision is backed by conversion data. We design for clicks, signups, and sales.</p>
+                </div>
+                <div class="card-hover bg-white border border-gray-100 rounded-2xl p-7 fade-in">
+                    <div class="w-11 h-11 bg-indigo-50 rounded-xl flex items-center justify-center mb-5">
+                        <iconify-icon icon="solar:palette-linear" width="22" style="color:#6366f1; stroke-width:1.5"></iconify-icon>
+                    </div>
+                    <h3 class="text-base font-semibold text-gray-900 mb-2 tracking-tight">Strategic Design</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">We start with your goals, not a template. Every element is purposefully placed for maximum impact.</p>
+                </div>
+                <div class="card-hover bg-white border border-gray-100 rounded-2xl p-7 fade-in">
+                    <div class="w-11 h-11 bg-indigo-50 rounded-xl flex items-center justify-center mb-5">
+                        <iconify-icon icon="solar:graph-up-linear" width="22" style="color:#6366f1; stroke-width:1.5"></iconify-icon>
+                    </div>
+                    <h3 class="text-base font-semibold text-gray-900 mb-2 tracking-tight">Measurable ROI</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Track every metric that matters. Our clients see an average 3x return on their investment.</p>
+                </div>
+                <div class="card-hover bg-white border border-gray-100 rounded-2xl p-7 fade-in">
+                    <div class="w-11 h-11 bg-indigo-50 rounded-xl flex items-center justify-center mb-5">
+                        <iconify-icon icon="solar:shield-check-linear" width="22" style="color:#6366f1; stroke-width:1.5"></iconify-icon>
+                    </div>
+                    <h3 class="text-base font-semibold text-gray-900 mb-2 tracking-tight">Ongoing Support</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">We don't disappear after launch. Continuous optimization, updates, and support when you need it.</p>
+                </div>
+                <div class="card-hover bg-white border border-gray-100 rounded-2xl p-7 fade-in">
+                    <div class="w-11 h-11 bg-indigo-50 rounded-xl flex items-center justify-center mb-5">
+                        <iconify-icon icon="solar:code-square-linear" width="22" style="color:#6366f1; stroke-width:1.5"></iconify-icon>
+                    </div>
+                    <h3 class="text-base font-semibold text-gray-900 mb-2 tracking-tight">Modern Tech Stack</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Built with cutting-edge tools for blazing performance, perfect SEO scores, and seamless scaling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work / Gallery Section -->
+    <section id="work" class="py-24 lg:py-32 px-6 lg:px-8 bg-gray-50 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16 fade-in">
+                <div class="text-xs font-semibold text-indigo-500 uppercase tracking-widest mb-4">Selected Work</div>
+                <h2 class="font-serif text-3xl lg:text-4xl tracking-tight text-gray-900 mb-5">Websites we're proud of</h2>
+                <p class="text-gray-500 leading-relaxed font-light">A curated selection of recent projects across SaaS, ecommerce, and professional services.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+                <div class="fade-in">
+                    <div class="browser-mockup bg-white border border-gray-200 gallery-img cursor-pointer">
+                        <div class="bg-gray-50 border-b border-gray-200 px-4 py-2.5 flex items-center gap-3">
+                            <div class="browser-dots flex gap-1.5">
+                                <span style="background:#ff5f57"></span>
+                                <span style="background:#febc2e"></span>
+                                <span style="background:#28c840"></span>
+                            </div>
+                            <div class="flex-1 mx-4">
+                                <div class="bg-white border border-gray-200 rounded-md px-3 py-1 text-xs text-gray-400">novafinance.io</div>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&amp;h=440&amp;fit=crop&amp;q=80" alt="Nova Finance SaaS Dashboard" class="w-full" style="aspect-ratio: 16/10; object-fit: cover;">
+                    </div>
+                    <div class="mt-5 px-1">
+                        <h3 class="font-semibold text-gray-900 tracking-tight">Nova Finance</h3>
+                        <p class="text-sm text-gray-400 mt-1">SaaS Platform · +180% signups after redesign</p>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="browser-mockup bg-white border border-gray-200 gallery-img cursor-pointer">
+                        <div class="bg-gray-50 border-b border-gray-200 px-4 py-2.5 flex items-center gap-3">
+                            <div class="browser-dots flex gap-1.5">
+                                <span style="background:#ff5f57"></span>
+                                <span style="background:#febc2e"></span>
+                                <span style="background:#28c840"></span>
+                            </div>
+                            <div class="flex-1 mx-4">
+                                <div class="bg-white border border-gray-200 rounded-md px-3 py-1 text-xs text-gray-400">arcstudio.co</div>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=700&amp;h=440&amp;fit=crop&amp;q=80" alt="Arc Studio Website Design" class="w-full" style="aspect-ratio: 16/10; object-fit: cover;">
+                    </div>
+                    <div class="mt-5 px-1">
+                        <h3 class="font-semibold text-gray-900 tracking-tight">Arc Studio</h3>
+                        <p class="text-sm text-gray-400 mt-1">Architecture Firm · 4x more project inquiries</p>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="browser-mockup bg-white border border-gray-200 gallery-img cursor-pointer">
+                        <div class="bg-gray-50 border-b border-gray-200 px-4 py-2.5 flex items-center gap-3">
+                            <div class="browser-dots flex gap-1.5">
+                                <span style="background:#ff5f57"></span>
+                                <span style="background:#febc2e"></span>
+                                <span style="background:#28c840"></span>
+                            </div>
+                            <div class="flex-1 mx-4">
+                                <div class="bg-white border border-gray-200 rounded-md px-3 py-1 text-xs text-gray-400">verdantshop.com</div>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&amp;h=440&amp;fit=crop&amp;q=80" alt="Verdant Ecommerce Store" class="w-full" style="aspect-ratio: 16/10; object-fit: cover;">
+                    </div>
+                    <div class="mt-5 px-1">
+                        <h3 class="font-semibold text-gray-900 tracking-tight">Verdant Shop</h3>
+                        <p class="text-sm text-gray-400 mt-1">Ecommerce · $2.4M revenue in first year</p>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="browser-mockup bg-white border border-gray-200 gallery-img cursor-pointer">
+                        <div class="bg-gray-50 border-b border-gray-200 px-4 py-2.5 flex items-center gap-3">
+                            <div class="browser-dots flex gap-1.5">
+                                <span style="background:#ff5f57"></span>
+                                <span style="background:#febc2e"></span>
+                                <span style="background:#28c840"></span>
+                            </div>
+                            <div class="flex-1 mx-4">
+                                <div class="bg-white border border-gray-200 rounded-md px-3 py-1 text-xs text-gray-400">pulsehq.app</div>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=700&amp;h=440&amp;fit=crop&amp;q=80" alt="Pulse HQ App Website" class="w-full" style="aspect-ratio: 16/10; object-fit: cover;">
+                    </div>
+                    <div class="mt-5 px-1">
+                        <h3 class="font-semibold text-gray-900 tracking-tight">Pulse HQ</h3>
+                        <p class="text-sm text-gray-400 mt-1">Productivity App · 12k users in 3 months</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="process" class="py-24 lg:py-32 px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16 fade-in">
+                <div class="text-xs font-semibold text-indigo-500 uppercase tracking-widest mb-4">Our Process</div>
+                <h2 class="font-serif text-3xl lg:text-4xl tracking-tight text-gray-900 mb-5">From idea to launch<br>in four simple steps</h2>
+                <p class="text-gray-500 leading-relaxed font-light">A proven framework that eliminates guesswork and delivers results predictably, every time.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+                <div class="fade-in relative">
+                    <div class="flex items-center gap-4 mb-5">
+                        <div class="w-12 h-12 gradient-accent rounded-xl flex items-center justify-center text-white font-semibold text-sm shrink-0">01</div>
+                        <div class="hidden lg:block h-px bg-gray-200 flex-1"></div>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2 tracking-tight">Discovery Call</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">We learn your goals, audience, and brand. A 30-minute call that shapes everything that follows.</p>
+                </div>
+                <div class="fade-in relative">
+                    <div class="flex items-center gap-4 mb-5">
+                        <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 font-semibold text-sm shrink-0">02</div>
+                        <div class="hidden lg:block h-px bg-gray-200 flex-1"></div>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2 tracking-tight">Strategy &amp; Design</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">We map your conversion funnel and create pixel-perfect designs you'll review in 48 hours.</p>
+                </div>
+                <div class="fade-in relative">
+                    <div class="flex items-center gap-4 mb-5">
+                        <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 font-semibold text-sm shrink-0">03</div>
+                        <div class="hidden lg:block h-px bg-gray-200 flex-1"></div>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2 tracking-tight">Development &amp; Launch</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Clean code, blazing performance, perfect SEO. We build it, test it, and launch it together.</p>
+                </div>
+                <div class="fade-in">
+                    <div class="flex items-center gap-4 mb-5">
+                        <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 font-semibold text-sm shrink-0">04</div>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2 tracking-tight">Optimize &amp; Grow</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Post-launch analytics, A/B testing, and continuous improvements to maximize your ROI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="lg:py-32 lg:px-8 border-y bg-gray-50 border-gray-100 pt-24 pr-6 pb-24 pl-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16 fade-in">
+                <div class="text-xs font-semibold text-indigo-500 uppercase tracking-widest mb-4">Client Stories</div>
+                <h2 class="font-serif text-3xl lg:text-4xl tracking-tight text-gray-900 mb-5">Trusted by founders and<br>marketing teams</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="testimonial-card bg-white border border-gray-100 rounded-2xl p-7 fade-in">
+                    <div class="flex gap-1 mb-5">
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6">"Our conversion rate jumped from 1.2% to 4.8% within the first month. LeadSite didn't just redesign our site — they rethought our entire digital strategy. The ROI has been incredible."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 gradient-accent rounded-full flex items-center justify-center text-white text-sm font-semibold">SR</div>
+                        <div>
+                            <div class="text-sm font-semibold text-gray-900">Sarah Rodriguez</div>
+                            <div class="text-xs text-gray-400">CEO, Nova Finance</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white border border-gray-100 rounded-2xl p-7 fade-in">
+                    <div class="flex gap-1 mb-5">
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6">"I've worked with agencies that charge 5x more and deliver half the quality. LeadSite had our new site live in 10 days, and our monthly revenue grew 60% in the first quarter. Unreal."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center text-white text-sm font-semibold">JK</div>
+                        <div class="">
+                            <div class="text-sm font-semibold text-gray-900">James Kim</div>
+                            <div class="text-xs text-gray-400">Founder, Verdant Shop</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white border border-gray-100 rounded-2xl p-7 fade-in">
+                    <div class="flex gap-1 mb-5">
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="16" style="color:#f59e0b"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6">"The process was seamless. They understood our brand better than we did. We went from getting zero inbound leads to 40+ qualified inquiries per month. Best investment we've made."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">AP</div>
+                        <div>
+                            <div class="text-sm font-semibold text-gray-900">Amanda Park</div>
+                            <div class="text-xs text-gray-400">Director, Arc Studio</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-24 lg:py-32 px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16 fade-in">
+                <div class="text-xs font-semibold text-indigo-500 uppercase tracking-widest mb-4">Compare Options</div>
+                <h2 class="font-serif text-3xl lg:text-4xl tracking-tight text-gray-900 mb-5">Not all web design<br>is created equal</h2>
+                <p class="text-gray-500 leading-relaxed font-light">See how LeadSite Studio stacks up against the alternatives.</p>
+            </div>
+            <div class="fade-in overflow-x-auto">
+                <table class="w-full min-w-xl">
+                    <thead class="">
+                        <tr class="border-b border-gray-200">
+                            <th class="text-left py-4 pr-4 text-sm font-medium text-gray-400 w-1/5"></th>
+                            <th class="py-4 px-4 text-center">
+                                <div class="gradient-accent text-white text-xs font-semibold px-3 py-1 rounded-full inline-block mb-2">Recommended</div>
+                                <div class="text-sm font-semibold text-gray-900">LeadSite Studio</div>
+                            </th>
+                            <th class="py-4 px-4 text-center">
+                                <div class="text-sm font-medium text-gray-400">Freelancers</div>
+                            </th>
+                            <th class="py-4 px-4 text-center">
+                                <div class="text-sm font-medium text-gray-400">Template Sites</div>
+                            </th>
+                            <th class="py-4 px-4 text-center">
+                                <div class="text-sm font-medium text-gray-400">Big Agencies</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-gray-100">
+                            <td class="py-4 pr-4 font-medium text-gray-700">Price</td>
+                            <td class="check-highlight font-medium text-gray-900 text-center rounded-l-lg pt-4 pr-4 pb-4 pl-4">$500-1k</td>
+                            <td class="py-4 px-4 text-center text-gray-400">$1-5K</td>
+                            <td class="py-4 px-4 text-center text-gray-400">$0-500</td>
+                            <td class="py-4 px-4 text-center text-gray-400">$20-100K</td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="py-4 pr-4 font-medium text-gray-700">Timeline</td>
+                            <td class="py-4 px-4 text-center check-highlight font-medium text-gray-900">1-2 weeks</td>
+                            <td class="py-4 px-4 text-center text-gray-400">4-8 weeks</td>
+                            <td class="py-4 px-4 text-center text-gray-400">1-3 days</td>
+                            <td class="py-4 px-4 text-center text-gray-400">3-6 months</td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="py-4 pr-4 font-medium text-gray-700">Custom Design</td>
+                            <td class="py-4 px-4 text-center check-highlight"><iconify-icon icon="solar:check-circle-bold" width="20" style="color:#6366f1"></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:check-circle-bold" width="20" style="color:#d1d5db"></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:close-circle-bold" width="20" style="color:#e5e7eb"></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:check-circle-bold" width="20" style="color:#d1d5db"></iconify-icon></td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="py-4 pr-4 font-medium text-gray-700">Strategy Included</td>
+                            <td class="py-4 px-4 text-center check-highlight"><iconify-icon icon="solar:check-circle-bold" width="20" style="color:#6366f1"></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:close-circle-bold" width="20" style="color:#e5e7eb"></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:close-circle-bold" width="20" style="color:#e5e7eb"></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:check-circle-bold" width="20" style="color:#d1d5db"></iconify-icon></td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="py-4 pr-4 font-medium text-gray-700">Ongoing Support</td>
+                            <td class="py-4 px-4 text-center check-highlight"><iconify-icon icon="solar:check-circle-bold" width="20" style="color:#6366f1"></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:close-circle-bold" width="20" style="color:#e5e7eb" class=""></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:close-circle-bold" width="20" style="color:#e5e7eb"></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:check-circle-bold" width="20" style="color:#d1d5db"></iconify-icon></td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="py-4 pr-4 font-medium text-gray-700">Conversion Focus</td>
+                            <td class="py-4 px-4 text-center check-highlight"><iconify-icon icon="solar:check-circle-bold" width="20" style="color:#6366f1"></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:close-circle-bold" width="20" style="color:#e5e7eb" class=""></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:close-circle-bold" width="20" style="color:#e5e7eb"></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:check-circle-bold" width="20" style="color:#d1d5db"></iconify-icon></td>
+                        </tr>
+                        <tr class="">
+                            <td class="py-4 pr-4 font-medium text-gray-700">Unlimited Revisions</td>
+                            <td class="py-4 px-4 text-center check-highlight rounded-b-lg"><iconify-icon icon="solar:check-circle-bold" width="20" style="color:#6366f1"></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:close-circle-bold" width="20" style="color:#e5e7eb" class=""></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:close-circle-bold" width="20" style="color:#e5e7eb"></iconify-icon></td>
+                            <td class="py-4 px-4 text-center"><iconify-icon icon="solar:close-circle-bold" width="20" style="color:#e5e7eb"></iconify-icon></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objection Handling -->
+    <section class="py-16 px-6 lg:px-8 bg-gray-50 border-y border-gray-100">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid sm:grid-cols-3 gap-6 fade-in">
+                <div class="flex items-start gap-4 bg-white rounded-xl border border-gray-100 p-6">
+                    <div class="w-10 h-10 bg-emerald-50 rounded-lg flex items-center justify-center shrink-0">
+                        <iconify-icon icon="solar:wallet-linear" width="20" style="color:#10b981; stroke-width:1.5"></iconify-icon>
+                    </div>
+                    <div class="">
+                        <div class="text-sm font-semibold text-gray-900 mb-1">Fixed pricing, no surprises</div>
+                        <p class="text-xs text-gray-400 leading-relaxed">You'll know the exact cost before we start. No hidden fees, no scope creep charges.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 bg-white rounded-xl border border-gray-100 p-6">
+                    <div class="w-10 h-10 bg-emerald-50 rounded-lg flex items-center justify-center shrink-0">
+                        <iconify-icon icon="solar:clock-circle-linear" width="20" style="color:#10b981; stroke-width:1.5"></iconify-icon>
+                    </div>
+                    <div class="">
+                        <div class="text-sm font-semibold text-gray-900 mb-1">Launch in 1-2 weeks</div>
+                        <p class="text-xs text-gray-400 leading-relaxed">Our streamlined process means you're live faster than you thought possible.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 bg-white rounded-xl border border-gray-100 p-6">
+                    <div class="w-10 h-10 bg-emerald-50 rounded-lg flex items-center justify-center shrink-0">
+                        <iconify-icon icon="solar:refresh-linear" width="20" style="color:#10b981; stroke-width:1.5"></iconify-icon>
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-gray-900 mb-1">Unlimited revisions</div>
+                        <p class="text-xs text-gray-400 leading-relaxed">We iterate until you're 100% satisfied. Your vision, perfected.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="lg:py-32 lg:px-8 pt-24 pr-6 pb-24 pl-6" id="contact">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-900 rounded-3xl p-10 lg:p-16 text-center relative overflow-hidden fade-in">
+                <div class="absolute inset-0 opacity-30" style="background: radial-gradient(ellipse at top right, #6366f1 0%, transparent 50%), radial-gradient(ellipse at bottom left, #8b5cf6 0%, transparent 50%);"></div>
+                <div class="relative z-10">
+                    <div class="inline-flex gap-2 uppercase text-xs font-semibold text-indigo-300 tracking-wide bg-white rounded-full mb-6 pt-1.5 pr-3 pb-1.5 pl-3 gap-x-2 gap-y-2 items-center">
+                        <span class="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-pulse"></span>
+                        Only 3 spots left this month
+                    </div>
+                    <h2 class="font-serif text-3xl lg:text-5xl tracking-tight text-white mb-5">Ready to transform<br>your online presence?</h2>
+                    <p class="text-gray-400 leading-relaxed max-w-lg mx-auto mb-10 font-light">Join 150+ brands that turned their website into their best salesperson. Let's build something that actually grows your business.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://calendly.com/davidcharlesii/free-quote" class="gradient-accent cta-hover inline-flex items-center justify-center gap-2 text-sm font-medium text-white rounded-lg pt-4 pr-8 pb-4 pl-8">
+                            Start Your Project
+                            <iconify-icon icon="solar:arrow-right-linear" width="16" class=""></iconify-icon>
+                        </a>
+                        <a href="#" class="border border-gray-700 text-gray-300 text-sm font-medium px-8 py-4 rounded-lg inline-flex items-center justify-center gap-2 hover:border-gray-500 hover:text-white transition-colors">
+                            Schedule a Call
+                        </a>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-6">Free 30-min consultation · No commitment required</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-100 pt-16 pb-8 px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-16">
+                <div class="lg:col-span-2">
+                    <a href="#" class="text-xl font-semibold tracking-tighter text-gray-900 inline-block mb-4">LeadSite<span class="gradient-text">.</span></a>
+                    <p class="text-sm text-gray-400 leading-relaxed max-w-xs mb-6">Premium web design that converts visitors into customers. Strategy-first, pixel-perfect, results-driven.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-9 h-9 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-200 transition-colors">
+                            <iconify-icon icon="solar:letter-linear" width="18" style="stroke-width:1.5"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-9 h-9 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-200 transition-colors">
+                            <iconify-icon icon="solar:global-linear" width="18" style="stroke-width:1.5"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-9 h-9 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-200 transition-colors">
+                            <iconify-icon icon="solar:chat-round-linear" width="18" style="stroke-width:1.5"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="">
+                    <h4 class="text-xs font-semibold text-gray-900 uppercase tracking-widest mb-4">Company</h4>
+                    <ul class="space-y-3">
+                        <li class=""><a href="#" class="text-sm text-gray-400 hover:text-gray-600 transition-colors">About</a></li>
+                        <li class=""><a href="#" class="text-sm text-gray-400 hover:text-gray-600 transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-gray-600 transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-gray-600 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h4 class="text-xs font-semibold text-gray-900 uppercase tracking-widest mb-4">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-gray-600 transition-colors">Web Design</a></li>
+                        <li class=""><a href="#" class="text-sm text-gray-400 hover:text-gray-600 transition-colors">Development</a></li>
+                        <li class=""><a href="#" class="text-sm text-gray-400 hover:text-gray-600 transition-colors">CRO Strategy</a></li>
+                        <li class=""><a href="#" class="text-sm text-gray-400 hover:text-gray-600 transition-colors">Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h4 class="text-xs font-semibold text-gray-900 uppercase tracking-widest mb-4">Newsletter</h4>
+                    <p class="text-sm text-gray-400 mb-4">Weekly design &amp; conversion tips.</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="you@email.com" class="flex-1 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-30 text-sm text-gray-700 bg-gray-100 border-0 rounded-lg pt-2.5 pr-4 pb-2.5 pl-4">
+                        <button class="gradient-accent text-white px-4 py-2.5 rounded-lg cta-hover">
+                            <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-100 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-gray-400">© 2025 LeadSite Studio. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-xs text-gray-400 hover:text-gray-600 transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-xs text-gray-400 hover:text-gray-600 transition-colors">Terms of Service</a>
+                    <a href="#" class="text-xs text-gray-400 hover:text-gray-600 transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Scroll-based fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.style.borderBottomColor = 'rgba(229,231,235,1)';
+            } else {
+                nav.style.borderBottomColor = 'rgba(229,231,235,0.5)';
+            }
+        });
+    </script>
+
+</body></html>
